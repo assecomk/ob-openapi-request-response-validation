@@ -132,8 +132,28 @@ and [Docker](https://docker.com)
 
 
 ---
-### ASEE Deployment Kubernetest
+### ASEE Deployment Kubernetes
 
+First we need to ensure that we compile and package the code by simply using [Maven](https://maven.apache.org/guides/getting-started/windows-prerequisites.html), which requires [Java](https://learn.microsoft.com/en-us/java/openjdk/install), this will generate the neccessary **.jar** file that is required for building the docker image.
+
+Before compiling the application code with Maven and creating the neccessary **.jar** file make sure that java is present on your machine
+
+```sh
+java -version
+```
+Expected output:
+```sh
+java version "1.8.0_311"
+Java(TM) SE Runtime Environment (build 1.8.0_311-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.311-b11, mixed mode)
+```
+Open a Terminal within the root directory of the cloned repo, execute the following commands for compiling and packaging:
+```sh
+mvn compile
+```
+```sh
+mvn package
+```
 To deploy the application to a Kubernetes cluster, you should first build a Docker image and push it to the Harbor repository. Before building the Docker image from a Dockerfile, ensure that Docker is installed on your machine. You can download the latest version of Docker Desktop by following [this link](https://www.docker.com/products/docker-desktop/). Choose the appropriate setup for your machine and install it.
 
 
